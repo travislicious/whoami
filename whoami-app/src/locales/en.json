@@ -1,0 +1,22 @@
+{
+    "main_desc": "Get instantly your traits and see",
+    "main_desc_span": "Who•Are•You",
+    "main_desc_next": " with only your name.",
+    "input_label": "Name",
+    "btn_text": "Show Traits.",
+    "author_text": "Made with Love by Ayomide.",
+    "main_title": "Who•am•i",
+    "error_text": "Please enter your name.",
+    "loading_text": "Please wait...",
+
+    "traits": {
+        "confidence_txt": "a confidence of",
+        "smile_txt": "a smile of",
+        "love_txt": "a love of",
+        "anger_txt": "an anger of",
+        "cuteness_txt": "a cuteness of",
+        "kindness_txt": "a kindness of"
+    }, 
+
+    "appreciations": ["Extremely bad", "Very bad", "Bad", "Normal", "Almost Good", "Good", "Pretty Good", "Extremely Good."]
+}

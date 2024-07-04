@@ -1,0 +1,27 @@
+{
+    "main_desc": "Obtenez instantanément vos traits et voyez ",
+    "main_desc_next": " avec seulement votre nom.",
+    "main_desc_span": "Qui•Êtes•Vous",
+    "input_label": "Nom",
+    "btn_text": "Afficher les traits.",
+    "author_text": "Fait avec amour par Ayomide.",
+    "main_title": "Qui•suis•je.",
+    "error_text": "Veuillez entrez votre nom.",
+    "loading_text": "Veuillez patientez...",
+    "error_alert": "Une erreur s'est produite. Réesayez plus tard.",
+    "trait_parag1": "Traits de ",
+    "trait_parag2": " a:",
+    "rate_text": " a eu un pourcentage de ",
+    "show_another_text": "Montrez les traits d'une autre personne.",
+
+    "traits": {
+        "confidence_txt": "une confiance de",
+        "smile_txt": "un sourire de",
+        "love_txt": "un amour de",
+        "anger_txt": "une colère de",
+        "cuteness_txt": "une mignonnerie de",
+        "kindness_txt": "une gentillesse de"
+    }, 
+
+    "appreciations": ["Extrêmement mauvais", "Très mauvais", "Mauvais", "Normal", "Presque bon", "Bon", "Très bon", "Extrêmement bon."]
+}

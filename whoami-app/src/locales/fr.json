@@ -13,14 +13,19 @@
     "trait_parag2": " a:",
     "rate_text": " a eu un pourcentage de ",
     "show_another_text": "Montrez les traits d'une autre personne.",
+    "share_msg_1": "Allez sur ",
+    "share_msg_2": " pour voir le votre.",
+    "lang_choose": "Langue",
+    "lang_1": "Anglais",
+    "lang_2": "Français",
 
     "traits": {
-        "confidence_txt": "une confiance de",
-        "smile_txt": "un sourire de",
-        "love_txt": "un amour de",
-        "anger_txt": "une colère de",
-        "cuteness_txt": "une mignonnerie de",
-        "kindness_txt": "une gentillesse de"
+        "confidence_txt": "une confiance de ",
+        "smile_txt": "un sourire de ",
+        "love_txt": "un amour de ",
+        "anger_txt": "une colère de ",
+        "cuteness_txt": "une mignonnerie de ",
+        "kindness_txt": "une gentillesse de "
     }, 
 
     "appreciations": ["Extrêmement mauvais", "Très mauvais", "Mauvais", "Normal", "Presque bon", "Bon", "Très bon", "Extrêmement bon."]

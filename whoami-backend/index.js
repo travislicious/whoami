@@ -29,8 +29,9 @@ const drawImage = () => {
         backgroundColor: colors.black
     });
 
-    const textWithEmoji = new fabric.Text('Hello, World! 😊', {
+    const textWithEmoji = new fabric.Textbox('Sparkles: ✨✨✨\nSmiles: 😊👨🏾‍🦱🙂', {
         fontSize: 50,
+        fontFamily: "Open Sans",
         fill: colors.white,
         originX: 'center',
         originY: 'center'

@@ -8,7 +8,8 @@ import { useEffect } from 'react'
 import i18next from 'i18next'
 
 type Inputs = {
-  name: string
+  name: string,
+  lang: "en" | "fr"
 }
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data.name)
-    navigate(`/traits/${data.name}`)
+    navigate(`/traits/${data.name}?lang=fr`)
   }
 
   return (

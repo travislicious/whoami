@@ -11,7 +11,7 @@
     "error_txt": "Une erreur s'est produite. Réesayez plus tard.",
     "trait_parag": "Traits de ",
     "rate_text": " a eu un pourcentage total de ",
-    "show_another_text": "Refaire avec un autre.",
+    "show_another_text": "Refaire un autre test.",
     "share_msg_1": "Allez sur ",
     "share_msg_2": " pour voir le votre.",
     "lang_change": "Version Anglaise.",
@@ -35,5 +35,5 @@
         "kindness": "Gentillesse."
     },
 
-    "appreciations": ["Nul à chier.", "Pas du tout bo,n.", "Mauvais", "Dans la moyenne.", "Pas Mal.", "On va dire bon.", "Carrément bon.", "Extrêmement bon."]
+    "appreciations": ["Plus mauvais que mauvais.", "Nul à chier.", "Pas du tout bon.", "Mauvais.", "Dans la moyenne.", "Pas Mal.", "On va dire bon.", "Carrément bon.", "Extrêmement bon.", "Parfait."]
 }

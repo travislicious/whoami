@@ -60,7 +60,7 @@ function TraitsPage() {
         fetchData()
     }, [])
 
-    if (false) {
+    if (loading) {
         return (<main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
             <h1 className="text-3xl font-semibold animate-pulse">{t('loading_text')}</h1>
         </main>)
@@ -77,7 +77,7 @@ function TraitsPage() {
         <main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
             
             <h1 className="text-3xl">{t('trait_parag')}<span className="text-3xl text-blue-500">{person ? person?.name : "XXXXX"}</span>.</h1>
-            <div className="mt-6 border h-[30rem] flex flex-col items-center rounded-lg md:w-96 gap-2 border-neutral-800 mb-6 w-[28rem]">
+            <div className="mt-6 border h-[30rem] flex flex-col items-center rounded-lg gap-2 border-neutral-800 mb-6 w-[28rem]">
             <ul className="w-full flex flex-col h-full overflow-auto p-7 gap-6 no-scrollbar scroll-smooth snap-y snap-center">
                 { person?.traits.map((trait) => {
                     return (
@@ -87,7 +87,7 @@ function TraitsPage() {
             </ul>
             </div>
             <div className="flex w-[28rem] items-center flex-col">
-                <button className='w-auto rounded-lg text-black hover:bg-neutral-300 bg-white transition-colors duration-200 p-2.5 mt-2 text-xl'>{t('show_another_text')}</button>
+                <button className='w-auto rounded-lg text-black hover:bg-neutral-300 bg-white transition-colors duration-200 p-2.5 mt-2 text-xl' onClick={() => navigate(`/?lang=${langQuery}`)}>{t('show_another_text')}</button>
                 <div className="flex items-center gap-6">
                     <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6">
                         <img src={copy} alt="" width={20}/>

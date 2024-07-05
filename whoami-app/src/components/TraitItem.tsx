@@ -17,14 +17,16 @@ const TraitItem: React.FC<TraitsProps> = ({traitName, percent, lang}) => {
 
     useEffect(() => {
         i18next.changeLanguage(lang)
+        getPercentData()
     }, [lang])
 
     useEffect(() => {
-        getTraitData(traitName, 100)
+        getTraitData()
     }, [])
 
-    function getTraitData(name: string, percent: number) {
-        switch (name) {
+    function getTraitData() {
+        getPercentData()
+        switch (traitName) {
             case "confidence":
                 setDescription(t('traits.confidence_txt'))
                 break;
@@ -45,6 +47,45 @@ const TraitItem: React.FC<TraitsProps> = ({traitName, percent, lang}) => {
                 break;
         }
     }
+
+    function getPercentData() {
+        if (percent === 0) {
+            setAppreciation(t('appreciations.0'))
+        }
+        else if (percent > 0 && percent < 10) {
+            setAppreciation(t('appreciations.0'))
+        }
+        else if (percent >= 10 && percent < 20) {
+            setAppreciation(t('appreciations.1'))
+        }
+        else if (percent >= 20 && percent < 30) {
+            setAppreciation(t('appreciations.2'))
+        }
+        else if (percent >= 30 && percent < 40) {
+            setAppreciation(t('appreciations.3'))
+        }
+        else if (percent >= 40 && percent < 50) {
+            setAppreciation(t('appreciations.4'))
+        }
+        else if (percent >= 50 && percent < 60) {
+            setAppreciation(t('appreciations.5'))
+        }
+        else if (percent >= 60 && percent < 70) {
+            setAppreciation(t('appreciations.6'))
+        }
+        else if (percent >= 70 && percent < 80) {
+            setAppreciation(t('appreciations.7'))
+        }
+        else if (percent >= 80 && percent < 90) {
+            setAppreciation(t('appreciations.8'))
+        }
+        else if (percent >= 90 && percent < 100) {
+            setAppreciation(t('appreciations.9'))
+        }
+        else if (percent === 100) {
+            setAppreciation(t('appreciations.9'))
+        }
+    }
     return (
         <div className="w-full">
             <div>
@@ -55,7 +96,7 @@ const TraitItem: React.FC<TraitsProps> = ({traitName, percent, lang}) => {
                 </div>
                 <CountUp end={percent} suffix="%" className="text-6xl font-bold" duration={1.75} delay={0}/>
             </div>
-            <h1 className="w-full text-xl mt-2 italic text-neutral-400">- Pas Mal.</h1>
+            <h1 className="w-full text-xl mt-2 italic text-neutral-400">- {appreciation}</h1>
         </div>
     )
 }

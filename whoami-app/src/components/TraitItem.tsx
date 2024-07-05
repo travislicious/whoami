@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import help from '/help.png'
-
+import CountUp from 'react-countup';
 interface TraitsProps  {
     traitName: string,
     percent: number,
@@ -28,6 +28,21 @@ const TraitItem: React.FC<TraitsProps> = ({traitName, percent, lang}) => {
             case "confidence":
                 setDescription(t('traits.confidence_txt'))
                 break;
+            case "smile":
+                setDescription(t('traits.smile_txt'))
+                break;
+            case "love":
+                setDescription(t('traits.love_txt'))
+                break;
+            case "anger":
+                setDescription(t('traits.anger_txt'))
+                break;
+            case "cuteness":
+                setDescription(t('traits.cuteness_txt'))
+                break;
+            case "kindness":
+                setDescription(t('traits.kindness_txt'))
+                break;
         }
     }
     return (
@@ -38,7 +53,7 @@ const TraitItem: React.FC<TraitsProps> = ({traitName, percent, lang}) => {
                 <img src={help} alt="" className="size-5 opacity-60 transition-all duration-200 cursor-pointer hover:opacity-0 peer"/>
                 <h1 className="w-full opacity-0 transition-all peer-hover:opacity-100 duration-200 text-xl text-neutral-600 font-semibold text-right italic">{description}</h1>
                 </div>
-                <h1 className="text-5xl font-bold mt-2">{percent}%</h1>
+                <CountUp end={percent} suffix="%" className="text-6xl font-bold" duration={1.75} delay={0}/>
             </div>
             <h1 className="w-full text-xl mt-2 italic text-neutral-400">- Pas Mal.</h1>
         </div>

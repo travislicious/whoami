@@ -53,17 +53,13 @@ const drawImage = () => {
 
 // Function to generate personality traits with weights
 const getPersonalityTraits = () => {
-    // Default weights if not provided
-
-    // Generate traits with weighted values
-    return {
-        confidence: Math.floor(Math.random() * 100),
-        smile: Math.floor(Math.random() * 100),
-        cuteness: Math.floor(Math.random() * 100),
-        love: Math.floor(Math.random() * 100),
-        kindness: Math.floor(Math.random() * 100),
-        anger: Math.floor(Math.random() * 100)
-    };
+    const arr = [{name: "confidence", percent: Math.floor(Math.random() * 100)},
+        {name: "smile", percent: Math.floor(Math.random() * 100)},
+        {name: "cuteness", percent: Math.floor(Math.random() * 100)},
+        {name: "love", percent: Math.floor(Math.random() * 100)},
+        {name: "kindness", percent: Math.floor(Math.random() * 100)},
+        {name: "anger", percent: Math.floor(Math.random() * 100)}]
+    return arr;
 };
 
 // Route to handle personality request

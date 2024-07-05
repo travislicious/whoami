@@ -56,6 +56,7 @@ function App() {
       <img src={reddit} alt="twitter" />
       </a>
     </div>
+    <button type="submit" className='w-42 border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-2 mt-6'>{t('lang_change')}</button>
   </main>
   )
 }

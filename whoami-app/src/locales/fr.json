@@ -8,25 +8,32 @@
     "main_title": "Qui•suis•je.",
     "error_text": "Veuillez entrez votre nom.",
     "loading_text": "Veuillez patientez...",
-    "error_alert": "Une erreur s'est produite. Réesayez plus tard.",
-    "trait_parag1": "Traits de ",
-    "trait_parag2": " a:",
-    "rate_text": " a eu un pourcentage de ",
+    "error_txt": "Une erreur s'est produite. Réesayez plus tard.",
+    "trait_parag": "Traits de ",
+    "rate_text": " a eu un pourcentage total de ",
     "show_another_text": "Montrez les traits d'une autre personne.",
     "share_msg_1": "Allez sur ",
     "share_msg_2": " pour voir le votre.",
-    "lang_choose": "Langue",
-    "lang_1": "Anglais",
-    "lang_2": "Français",
+    "lang_change": "Version Anglaise.",
+    
 
     "traits": {
-        "confidence_txt": "une confiance de ",
-        "smile_txt": "un sourire de ",
-        "love_txt": "un amour de ",
-        "anger_txt": "une colère de ",
-        "cuteness_txt": "une mignonnerie de ",
-        "kindness_txt": "une gentillesse de "
-    }, 
+        "confidence_txt": "La confiance.",
+        "smile_txt": "Le sourire.",
+        "love_txt": "L'amour.",
+        "anger_txt": "La colère.",
+        "cuteness_txt": "La mignonnerie.",
+        "kindness_txt": "La gentillesse. "
+    },
 
-    "appreciations": ["Extrêmement mauvais", "Très mauvais", "Mauvais", "Normal", "Presque bon", "Bon", "Très bon", "Extrêmement bon."]
+    "traits_name": {
+        "confidence": "Confiance.",
+        "smile": "Sourire.",
+        "love": "Amour.",
+        "anger": "Colère.",
+        "cuteness": "Mignonnerie.",
+        "kindness": "Gentillesse."
+    },
+
+    "appreciations": ["Nul à chier.", "Pas du tout bo,n.", "Mauvais", "Dans la moyenne.", "Pas Mal.", "On va dire bon.", "Carrément bon.", "Extrêmement bon."]
 }

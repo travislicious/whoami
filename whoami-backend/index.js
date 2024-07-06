@@ -7,11 +7,8 @@ const app = express();
 const port = 3000;
 
 app.use(cors())
-const axios = require('axios');
-const fs = require('fs');
+app.use(express.static(path.join(process.cwd(), '/public')))
 
-const fontUrl = 'https://github.com/travislicious/whoami/raw/main/whoami-backend/public/Inter-VariableFont_slnt,wght.ttf';
-const fontLocalPath = '/tmp/font.ttf';
 
 const width = 720
 const height = 1280
@@ -28,15 +25,8 @@ const colors = {
     blue: "#2563eb"
 }
 
-async function downloadFont(url, localPath) {
-    const response = await axios.get(url, { responseType: 'arraybuffer' });
-    fs.writeFileSync(localPath, response.data);
-}
-
 const drawImage = (lang, traits, personName, totalPercent) => {
-    downloadFont(fontUrl, fontLocalPath)
-    .then(() => {
-    fabric.nodeCanvas.registerFont(fontLocalPath, {
+    fabric.nodeCanvas.registerFont(path.join(process.cwd(), '/public/Inter.ttf'), {
         family: 'Inter', weight: 'regular', style: 'normal'
       });
 
@@ -88,7 +78,6 @@ const drawImage = (lang, traits, personName, totalPercent) => {
     const data = canvas.toDataURL("image/png")
 
     return data
-    })
 
 }
 

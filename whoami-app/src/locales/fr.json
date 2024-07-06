@@ -14,7 +14,11 @@
     "show_another_text": "Refaire un autre test.",
     "share_msg_1": "Allez sur ",
     "share_msg_2": " pour voir le votre.",
-    "lang_change": "Version Anglaise.",
+    "lang_change": "English Version.",
+    "copy_msg": "Texte copié.",
+    "download_msg": "Fichier téléchargé.",
+    "total_txt_1": "En total ",
+    "total_txt_2": " a eu un pourcentage de ",
     
 
     "traits": {

@@ -27,9 +27,11 @@ function TraitsPage() {
     const [loading, setLoading] = useState(true)
     const [isError, setIsError] = useState(false)
     const [person, setPerson] = useState<Person>()
+    const [copyTxt, setCopyTxt] = useState("")
+    const [statutTxt, setStatutTxt] = useState("")
     const params = useParams<Params>()
     const navigate = useNavigate()
-    let totalScore = 15
+    const [totalPercent, setTotalPercent] = useState(0)
     const { t } = useTranslation()
     const location = useLocation()
     const langQuery = new URLSearchParams(location.search).get("lang") || "en"
@@ -41,7 +43,7 @@ function TraitsPage() {
     const fetchData = async() => {
         try {
             setLoading(true)
-            const url = `https://whoami-backend.vercel.app/traits/${params.name?.replace(" ", "%20")}`;
+            const url = `https://whoami-backend.vercel.app/person/${params.name?.replace(" ", "%20")}`;
         
             const response = await fetch(url);
             const text = await response.text()
@@ -53,12 +55,29 @@ function TraitsPage() {
             setLoading(false)
             setIsError(true)
         }
-
+        
     }
-
+    
     useEffect(() => {
         fetchData()
     }, [])
+
+    useEffect(() => {
+        if (person) {
+            calculateTotal()
+        }
+    })
+
+    function calculateTotal() {
+        let total = 0
+        let calculatedPercent = 0
+        person?.traits.map((trait) => {
+            total = total + trait.percent
+        })
+        calculatedPercent = total / 6
+        calculatedPercent = Math.round(calculatedPercent)
+        setTotalPercent(calculatedPercent)
+    }
 
     if (loading) {
         return (<main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
@@ -84,7 +103,11 @@ function TraitsPage() {
                         <TraitItem traitName={trait.name} percent={trait.percent} lang={langQuery}/>
                     )
                 })}
+                <h1 className="text-2xl w-full text-center font-semibold">{t('total_txt_1')}<span className="text-blue-500">{person?.name}</span>{t('total_txt_2')}:</h1>
+                <h1 className="text-8xl font-bold w-full text-center">{totalPercent}%</h1>
             </ul>
+            <div>
+            </div>
             </div>
             <div className="flex w-[28rem] items-center flex-col">
                 <button className='w-auto rounded-lg text-black hover:bg-neutral-300 bg-white transition-colors duration-200 p-2.5 mt-2 text-xl' onClick={() => navigate(`/?lang=${langQuery}`)}>{t('show_another_text')}</button>

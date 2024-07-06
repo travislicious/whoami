@@ -22,7 +22,7 @@ const colors = {
     gray: '#171717'
 }
 
-const drawImage = () => {
+const drawImage = (lang) => {
     const canvas = new fabric.Canvas(null, {
         width: width,
         height: height,
@@ -63,9 +63,10 @@ const getPersonalityTraits = () => {
 };
 
 // Route to handle personality request
-app.get('/traits/:name', async (req, res) => {
+app.get('/person/:name', async (req, res) => {
     try {
         const name = req.params.name;
+        const lang = req.query.lang
         // Example weights - adjust these as needed
         const traits = getPersonalityTraits();
         res.json({

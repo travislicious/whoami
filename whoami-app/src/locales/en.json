@@ -1,22 +1,40 @@
 {
-    "main_desc": "Get instantly your traits and see ",
+    "main_desc": "Instantly get your traits and see ",
+    "main_desc_next": " with just your name.",
     "main_desc_span": "Who•Are•You",
-    "main_desc_next": " with only your name.",
     "input_label": "Name",
     "btn_text": "Show Traits.",
-    "author_text": "Made with Love by Ayomide.",
-    "main_title": "Who•am•i",
+    "author_text": "Made with love by Ayomide.",
+    "main_title": "Who•am•I.",
     "error_text": "Please enter your name.",
     "loading_text": "Please wait...",
+    "error_txt": "An error occurred. Please try again later.",
+    "trait_parag": "Traits of ",
+    "rate_text": " had a total percentage of ",
+    "show_another_text": "Take another test.",
+    "share_msg_1": "Go to ",
+    "share_msg_2": " to see yours.",
+    "lang_change": "Version Française.",
+    "copy_msg": "Text copied.",
+    "download_msg": "File downloaded.",
 
     "traits": {
-        "confidence_txt": "a confidence of",
-        "smile_txt": "a smile of",
-        "love_txt": "a love of",
-        "anger_txt": "an anger of",
-        "cuteness_txt": "a cuteness of",
-        "kindness_txt": "a kindness of"
-    }, 
+        "confidence_txt": "Confidence.",
+        "smile_txt": "Smile.",
+        "love_txt": "Love.",
+        "anger_txt": "Anger.",
+        "cuteness_txt": "Cuteness.",
+        "kindness_txt": "Kindness."
+    },
 
-    "appreciations": ["Extremely bad", "Very bad", "Bad", "Normal", "Almost Good", "Good", "Pretty Good", "Extremely Good."]
+    "traits_name": {
+        "confidence": "Confidence.",
+        "smile": "Smile.",
+        "love": "Love.",
+        "anger": "Anger.",
+        "cuteness": "Cuteness.",
+        "kindness": "Kindness."
+    },
+
+    "appreciations": ["Worse than bad.", "Terrible.", "Not good at all.", "Bad.", "Average.", "Not bad.", "Let's say good.", "Quite good.", "Extremely good.", "Perfect."]
 }

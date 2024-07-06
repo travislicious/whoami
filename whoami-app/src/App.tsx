@@ -31,7 +31,7 @@ function App() {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data.name)
-    navigate(`/traits/${data.name}?lang=fr`)
+    navigate(`/person/${data.name}?lang=${langQuery}`)
   }
 
   return (
@@ -56,7 +56,7 @@ function App() {
       <img src={reddit} alt="twitter" />
       </a>
     </div>
-    <button type="submit" className='w-42 border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-2 mt-6'>{t('lang_change')}</button>
+    <button type="submit" className='w-42 border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-2 mt-6' onClick={() => navigate(langQuery === "en" ? "/?lang=fr" : "/?lang=en")}>{t('lang_change')}</button>
   </main>
   )
 }

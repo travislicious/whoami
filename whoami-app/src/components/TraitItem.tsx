@@ -18,7 +18,7 @@ const TraitItem: React.FC<TraitsProps> = ({traitName, percent, lang}) => {
     useEffect(() => {
         i18next.changeLanguage(lang)
         getPercentData()
-    }, [lang])
+    }, [lang, percent])
 
     useEffect(() => {
         getTraitData()

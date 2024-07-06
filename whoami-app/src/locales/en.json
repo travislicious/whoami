@@ -19,6 +19,7 @@
     "download_msg": "File downloaded.",
     "total_txt_1": "Totally, ",
     "total_txt_2": " got a percent of",
+    "not_found": "Error - Page Not Found.",
 
     "traits": {
         "confidence_txt": "Confidence.",

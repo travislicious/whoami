@@ -5,16 +5,19 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 import TraitsPage from './pages/traits.tsx'
 import './i18n';
+import { ErrorPage } from './ErrorPage.tsx'
 
 
 const router = createBrowserRouter([
   {
   path: '/',
-  element: <App />
+  element: <App />,
+  errorElement: <ErrorPage />,
   },
   {
     path: '/person/:name',
-    element: <TraitsPage/>
+    element: <TraitsPage/>,
+    errorElement: <ErrorPage/>,
   }
 ])
 

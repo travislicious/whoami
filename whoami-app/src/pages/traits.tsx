@@ -49,7 +49,6 @@ function TraitsPage() {
         
             const response = await fetch(url);
             const text = await response.text()
-            console.log(JSON.parse(text).traits)
             setPerson(JSON.parse(text))
             setImgData(JSON.parse(text).img_data)
             setLoading(false)

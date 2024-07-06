@@ -16,7 +16,6 @@ function App() {
   const { t } = useTranslation()
   const location = useLocation()
   const langQuery = new URLSearchParams(location.search).get("lang") || "en"
-  console.log(langQuery)
 
   useEffect(() => {
     i18next.changeLanguage(langQuery)
@@ -30,7 +29,6 @@ function App() {
   const navigate = useNavigate()
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data.name)
     navigate(`/person/${data.name}?lang=${langQuery}`)
   }
 

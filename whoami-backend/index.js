@@ -1,11 +1,14 @@
 var express = require('express')
 var cors = require('cors')
 const fabric = require('fabric').fabric;
+const { registerFont } = require('canvas');
 
 const app = express();
 const port = 3000;
 
 app.use(cors())
+
+registerFont('./public/Inter.ttf', { family: 'Inter' });
 
 
 const width = 720

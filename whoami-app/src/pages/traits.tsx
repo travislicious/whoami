@@ -102,7 +102,7 @@ function TraitsPage() {
         <main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
             
             {langQuery === 'fr' ? <h1 className="text-3xl">{t('trait_parag')}<span className="text-3xl text-blue-500">{person ? person?.name : "XXXXX"}</span>.</h1>: <h1 className="text-3xl"><span className="text-3xl text-blue-500">{person ? person?.name : "XXXXX"}'s</span>{t('trait_parag')}.</h1>}
-            <div className="mt-6 border h-[30rem] flex flex-col items-center rounded-lg gap-2 border-neutral-800 mb-6 w-[28rem]">
+            <div className="mt-6 border h-[30rem] flex flex-col items-center rounded-lg gap-2 border-neutral-800 mb-6 w-[28rem] max-sm:w-64">
             <ul className="w-full flex flex-col h-full overflow-auto p-7 gap-6 no-scrollbar scroll-smooth snap-y snap-center">
                 { person?.traits.map((trait) => {
                     return (

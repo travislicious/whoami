@@ -36,7 +36,7 @@ function App() {
   <main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
     <h1 className=' text-4xl md:text-5xl font-semibold mb-4'>{t('main_title')}</h1>
     <h1 className='text-xl md:text-2xl w-[27rem] text-center'>{t('main_desc')} <span className='italic font-extrabold text-blue-500'>{t('main_desc_span')}</span>{t('main_desc_next')}</h1>
-    <form action="submit" className='mt-6 border p-4 h-64 flex flex-col items-center justify-center rounded-lg md:w-96 gap-2 border-neutral-800 mb-6 w-80' onSubmit={handleSubmit(onSubmit)}>
+    <form action="submit" className='mt-6 border p-4 h-64 flex flex-col items-center justify-center rounded-lg md:w-96 gap-2 border-neutral-800 mb-6 w-80 max-sm:w-64' onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="name" className='text-xl w-full'>{t('input_label')}</label>
       <input type="text" id="name" placeholder="John Doe" className='bg-transparent border w-full p-1.5 rounded-lg border-neutral-800 placeholder:text-neutral-800' {...register("name", {required: true})}/>
       {errors.name && <span className=' text-red-500 font-semibold w-full'>{t('error_text')}</span>}

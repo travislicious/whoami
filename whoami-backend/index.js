@@ -8,8 +8,9 @@ const port = 3000;
 
 app.use(cors())
 
-registerFont('./public/Inter.ttf', { family: 'Inter' });
-
+fabric.nodeCanvas.registerFont('./public/Inter.ttf', {
+    family: 'Inter', weight: 'regular', style: 'normal'
+  });
 
 const width = 720
 const height = 1280

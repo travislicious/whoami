@@ -45,7 +45,7 @@ function TraitsPage() {
     const fetchData = async() => {
         try {
             setLoading(true)
-            const url = `https://whoami-backend.vercel.app/person/${params.name?.replace(" ", "%20")}?lang=${langQuery}`;
+            const url = `https://whoami-1.onrender.com/person/${params.name?.replace(" ", "%20")}?lang=${langQuery}`;
         
             const response = await fetch(url);
             const text = await response.text()

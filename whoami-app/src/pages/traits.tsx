@@ -14,6 +14,7 @@ type Params = {
 export interface Person {
     name:   string;
     traits: Trait[];
+    img_data: string
 }
 
 export interface Trait {
@@ -50,6 +51,7 @@ function TraitsPage() {
             const text = await response.text()
             console.log(JSON.parse(text).traits)
             setPerson(JSON.parse(text))
+            setImgData(JSON.parse(text).img_data)
             setLoading(false)
             setIsError(false)
         } catch {
@@ -126,9 +128,9 @@ function TraitsPage() {
                     <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6" onClick={() => window.location.href = statutTxt}>
                         <img src={whatsapp} alt="" width={20}/>
                     </button>
-                    <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6">
+                    <a download={`${person?.name}-traits.png`} href={imgData} className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6">
                         <img src={download} alt="" width={20}/>
-                    </button>
+                    </a>
                 </div>
             </div>
         </main>

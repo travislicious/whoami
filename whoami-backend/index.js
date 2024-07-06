@@ -19,7 +19,8 @@ const colors = {
     green: '#22c55e',
     black: '#000000',
     white: '#ffffff',
-    gray: '#171717'
+    gray: '#171717',
+    blue: "#2563eb"
 }
 
 const drawImage = (lang, traits, personName, totalPercent) => {
@@ -29,21 +30,44 @@ const drawImage = (lang, traits, personName, totalPercent) => {
         backgroundColor: colors.black
     });
 
-    const textWithEmoji = new fabric.Textbox(lang === "fr" ? `Traits de ${personName}.\nConfiance: ${traits[0].percent}\nSourire: ${traits[1].percent}\nMignonnerie: ${traits[2].percent}\nAmour: ${traits[3].percent}\nGentillesse: ${traits[4].percent}\nColère: ${traits[5].percent}\n\nTotal: ${totalPercent}`: `${personName}'s Traits.\nConfidence: ${traits[0].percent}\nSmile: ${traits[1].percent}\nCuteness: ${traits[2].percent}\nLove: ${traits[3].percent}\nKindness: ${traits[4].percent}\nAnger: ${traits[5].percent}\n\nTotal: ${totalPercent}`, {
+    const textData = lang === "fr" ? `Qui•Suis•Je.\n\nTraits de ${personName}.\n\nConfiance: ${traits[0].percent}%\nSourire: ${traits[1].percent}%\nMignonnerie: ${traits[2].percent}%\nAmour: ${traits[3].percent}%\nGentillesse: ${traits[4].percent}%\nColère: ${traits[5].percent}%\n\nTotal: ${totalPercent}%\n\nAllez sur <website-name> pour voir le votre.`: `Who•Am•I.\n\n${personName}'s Traits.\n\nConfidence: ${traits[0].percent}%\nSmile: ${traits[1].percent}%\nCuteness: ${traits[2].percent}%\nLove: ${traits[3].percent}%\nKindness: ${traits[4].percent}%\nAnger: ${traits[5].percent}%\n\nTotal: ${totalPercent}%\n\nGo on <website-name> to see your own.`
+
+    const textImage = new fabric.Textbox(textData, {
         fontSize: 50,
-        fontFamily: "Open Sans",
+        fontFamily: 'Inter',
         fill: colors.white,
         originX: 'center',
-        originY: 'center'
+        originY: 'center',
+        width: width,
+        textAlign: 'center'
+
     });
-    
+
+    textImage.setSelectionStyles({
+        fill: colors.blue
+    }, textData.indexOf(personName), textData.indexOf(personName) + personName.length)
+    const titles = ["Qui•Suis•Je.", "Who•Am•I."]
+    titles.forEach((title) => {
+        textImage.setSelectionStyles({
+            fill: colors.blue,
+            fontWeight: 'bold',
+            fontSize: 55
+        }, textData.indexOf(title), textData.indexOf(title) + title.length)
+    })
+
+    const traitsName = ["Confiance", "Amour", "Sourire", "Mignonnerie", "Gentillesse", "Colère", "Total", "Confidence", "Smile", "Love", "Cuteness", "Kindness", "Anger"]
+    traitsName.forEach((trait) => {
+        textImage.setSelectionStyles({
+            fontWeight: '600',
+        }, textData.indexOf(trait), textData.indexOf(trait) + trait.length)
+    })
     // Center the text on the canvas
-    textWithEmoji.set({
+    textImage.set({
         left: center.x,
         top: center.y
     });
     
-    canvas.add(textWithEmoji);
+    canvas.add(textImage);
     
     const data = canvas.toDataURL("image/png")
 

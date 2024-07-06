@@ -8,7 +8,11 @@
     }
     ],
     "routes": [
-      { "src": "/person/(.*)", "dest": "/index.js" }
+      { "src": "/person/(.*)", "dest": "/index.js" },
+      {
+          "src": "/(.*)",
+          "dest": "/public/$1"
+      }
     ]
   }
   

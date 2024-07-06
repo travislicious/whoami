@@ -22,14 +22,14 @@ const colors = {
     gray: '#171717'
 }
 
-const drawImage = (lang) => {
+const drawImage = (lang, traits, personName) => {
     const canvas = new fabric.Canvas(null, {
         width: width,
         height: height,
         backgroundColor: colors.black
     });
 
-    const textWithEmoji = new fabric.Textbox(lang === "fr" ? `Traits de ${person?.name}.\nConfiance: ${person?.traits[0].percent}\nSourire: ${person?.traits[1].percent}\nMignonnerie: ${person?.traits[2].percent}\nAmour: ${person?.traits[3].percent}\nGentillesse: ${person?.traits[4].percent}\nColère: ${person?.traits[5].percent}\n\nTotal: ${totalPercent}`: `${person?.name}'s Traits.\nConfidence: ${person?.traits[0].percent}\nSmile: ${person?.traits[1].percent}\nCuteness: ${person?.traits[2].percent}\nLove: ${person?.traits[3].percent}\nKindness: ${person?.traits[4].percent}\nAnger: ${person?.traits[5].percent}\n\nTotal: ${totalPercent}`, {
+    const textWithEmoji = new fabric.Textbox(lang === "fr" ? `Traits de ${personName}.\nConfiance: ${traits[0].percent}\nSourire: ${traits[1].percent}\nMignonnerie: ${traits[2].percent}\nAmour: ${traits[3].percent}\nGentillesse: ${traits[4].percent}\nColère: ${traits[5].percent}\n\nTotal: ${totalPercent}`: `${personName}'s Traits.\nConfidence: ${traits[0].percent}\nSmile: ${traits[1].percent}\nCuteness: ${traits[2].percent}\nLove: ${traits[3].percent}\nKindness: ${traits[4].percent}\nAnger: ${traits[5].percent}\n\nTotal: ${totalPercent}`, {
         fontSize: 50,
         fontFamily: "Open Sans",
         fill: colors.white,
@@ -67,9 +67,9 @@ app.get('/person/:name', async (req, res) => {
     try {
         const name = req.params.name;
         const lang = req.query.lang
-        const data = drawImage(lang)
         // Example weights - adjust these as needed
         const traits = getPersonalityTraits();
+        const data = drawImage(lang, traits, name)
         res.json({
             name: name,
             traits: traits,

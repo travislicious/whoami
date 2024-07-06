@@ -25,7 +25,7 @@ const colors = {
 }
 
 const drawImage = (lang, traits, personName, totalPercent) => {
-    fabric.nodeCanvas.registerFont(path.join(process.cwd(), 'Inter.ttf'), {
+    fabric.nodeCanvas.registerFont(path.join(process.cwd(), '/public/Inter.ttf'), {
         family: 'Inter', weight: 'regular', style: 'normal'
       });
 

@@ -54,12 +54,20 @@ const drawImage = (lang, traits, personName, totalPercent) => {
         underline: true
 
     }, textData.indexOf("whoami-web.vercel.app"), textData.indexOf("whoami-web.vercel.app") + "whoami-web.vercel.app".length)
+    textImage.setSelectionStyles({
+        fontSize: 35
+
+    }, textData.indexOf("Go on whoami-web.vercel.app to see your own."), textData.indexOf("Go on whoami-web.vercel.app to see your own.") + "Go on whoami-web.vercel.app to see your own.".length)
+    textImage.setSelectionStyles({
+        fontSize: 35
+
+    }, textData.indexOf("Allez sur whoami-web.vercel.app pour voir le vôtre."), textData.indexOf("Allez sur whoami-web.vercel.app pour voir le vôtre.") + "Allez sur whoami-web.vercel.app pour voir le vôtre.".length)
     const titles = ["Qui•Suis•Je.", "Who•Am•I."]
     titles.forEach((title) => {
         textImage.setSelectionStyles({
             fill: colors.blue,
             fontWeight: 'bold',
-            fontSize: 45
+            fontSize: 60
         }, textData.indexOf(title), textData.indexOf(title) + title.length)
     })
 

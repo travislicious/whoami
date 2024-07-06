@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 
 app.use(cors())
-app.use(express.static(path.join(process.cwd(), '/public/Inter.ttf')))
+app.use(express.static(path.join(process.cwd(), '/public')))
 
 
 const width = 720

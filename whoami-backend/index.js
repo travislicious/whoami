@@ -35,8 +35,8 @@ const drawImage = (lang, traits, personName, totalPercent) => {
     const textData = lang === "fr" ? `Qui•Suis•Je.\n\nTraits de ${personName}.\n\nConfiance: ${traits[0].percent}%\nSourire: ${traits[1].percent}%\nMignonnerie: ${traits[2].percent}%\nAmour: ${traits[3].percent}%\nGentillesse: ${traits[4].percent}%\nColère: ${traits[5].percent}%\n\nTotal: ${totalPercent}%\n\nAllez sur whoami-web.vercel.app pour voir le votre.`: `Who•Am•I.\n\n${personName}'s Traits.\n\nConfidence: ${traits[0].percent}%\nSmile: ${traits[1].percent}%\nCuteness: ${traits[2].percent}%\nLove: ${traits[3].percent}%\nKindness: ${traits[4].percent}%\nAnger: ${traits[5].percent}%\n\nTotal: ${totalPercent}%\n\nGo on whoami-web.vercel.app to see your own.`
 
     const textImage = new fabric.Textbox(textData, {
-        fontSize: 50,
-        fontFamily: 'Inter',
+        fontSize: 40,
+        fontFamily: 'Arial',
         fill: colors.white,
         originX: 'center',
         originY: 'center',
@@ -49,7 +49,6 @@ const drawImage = (lang, traits, personName, totalPercent) => {
         fill: colors.blue
     }, textData.indexOf(personName), textData.indexOf(personName) + personName.length)
     textImage.setSelectionStyles({
-        fontSize: 45,
         underline: true
 
     }, textData.indexOf("whoami-web.vercel.app"), textData.indexOf("whoami-web.vercel.app") + "whoami-web.vercel.app".length)
@@ -58,7 +57,7 @@ const drawImage = (lang, traits, personName, totalPercent) => {
         textImage.setSelectionStyles({
             fill: colors.blue,
             fontWeight: 'bold',
-            fontSize: 55
+            fontSize: 45
         }, textData.indexOf(title), textData.indexOf(title) + title.length)
     })
 

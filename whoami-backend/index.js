@@ -36,6 +36,7 @@ const drawImage = (lang, traits, personName, totalPercent) => {
 
     const textImage = new fabric.Textbox(textData, {
         fontSize: 50,
+        fontFamily: 'Inter',
         fill: colors.white,
         originX: 'center',
         originY: 'center',

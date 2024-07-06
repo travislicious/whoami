@@ -1,16 +1,12 @@
 var express = require('express')
 var cors = require('cors')
 const fabric = require('fabric').fabric;
-const { registerFont } = require('canvas');
 
 const app = express();
 const port = 3000;
 
 app.use(cors())
 
-fabric.nodeCanvas.registerFont('./public/Inter.ttf', {
-    family: 'Inter', weight: 'regular', style: 'normal'
-  });
 
 const width = 720
 const height = 1280
@@ -28,6 +24,10 @@ const colors = {
 }
 
 const drawImage = (lang, traits, personName, totalPercent) => {
+    fabric.nodeCanvas.registerFont('./public/Inter.ttf', {
+        family: 'Inter', weight: 'regular', style: 'normal'
+      });
+      
     const canvas = new fabric.Canvas(null, {
         width: width,
         height: height,

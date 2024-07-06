@@ -22,7 +22,7 @@ const colors = {
     gray: '#171717'
 }
 
-const drawImage = (lang, traits, personName) => {
+const drawImage = (lang, traits, personName, totalPercent) => {
     const canvas = new fabric.Canvas(null, {
         width: width,
         height: height,
@@ -69,7 +69,14 @@ app.get('/person/:name', async (req, res) => {
         const lang = req.query.lang
         // Example weights - adjust these as needed
         const traits = getPersonalityTraits();
-        const data = drawImage(lang, traits, name)
+        let total = 0
+        let calculatedPercent = 0
+        traits.map((trait) => {
+            total = total + trait.percent
+        })
+        calculatedPercent = total / 6
+        calculatedPercent = Math.round(calculatedPercent)
+        const data = drawImage(lang, traits, name, calculatedPercent)
         res.json({
             name: name,
             traits: traits,

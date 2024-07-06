@@ -9,7 +9,7 @@
     "error_text": "Please enter your name.",
     "loading_text": "Please wait...",
     "error_txt": "An error occurred. Please try again later.",
-    "trait_parag": "Traits of ",
+    "trait_parag": " Traits",
     "rate_text": " had a total percentage of ",
     "show_another_text": "Take another test.",
     "share_msg_1": "Go to ",
@@ -17,6 +17,8 @@
     "lang_change": "Version Française.",
     "copy_msg": "Text copied.",
     "download_msg": "File downloaded.",
+    "total_txt_1": "Totally, ",
+    "total_txt_2": " got a percent of",
 
     "traits": {
         "confidence_txt": "Confidence.",

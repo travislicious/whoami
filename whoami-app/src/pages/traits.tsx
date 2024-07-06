@@ -29,6 +29,7 @@ function TraitsPage() {
     const [person, setPerson] = useState<Person>()
     const [copyTxt, setCopyTxt] = useState("")
     const [statutTxt, setStatutTxt] = useState("")
+    const [imgData, setImgData] = useState("")
     const params = useParams<Params>()
     const navigate = useNavigate()
     const [totalPercent, setTotalPercent] = useState(0)
@@ -61,7 +62,7 @@ function TraitsPage() {
     useEffect(() => {
         fetchData()
     }, [])
-
+    
     useEffect(() => {
         if (person) {
             calculateTotal()
@@ -77,8 +78,12 @@ function TraitsPage() {
         calculatedPercent = total / 6
         calculatedPercent = Math.round(calculatedPercent)
         setTotalPercent(calculatedPercent)
-    }
 
+        setCopyTxt(langQuery === "fr" ? `*Traits de ${person?.name}.*\n*Confiance:* ${person?.traits[0].percent}\n*Sourire*: ${person?.traits[1].percent}\n*Mignonnerie*: ${person?.traits[2].percent}\n*Amour*: ${person?.traits[3].percent}\n*Gentillesse*: ${person?.traits[4].percent}\n*Colère*: ${person?.traits[5].percent}\n\n*Total*: ${totalPercent}`: `*${person?.name}'s Traits.*\n*Confidence*: ${person?.traits[0].percent}\n*Smile*: ${person?.traits[1].percent}\n*Cuteness*: ${person?.traits[2].percent}\n*Love*: ${person?.traits[3].percent}\n*Kindness*: ${person?.traits[4].percent}\n*Anger*: ${person?.traits[5].percent}\n\n*Total:* ${totalPercent}`)
+
+        setStatutTxt(langQuery === "fr" ? `whatsapp://send?text=*Traits de ${person?.name}.*\n*Confiance:* ${person?.traits[0].percent}\n*Sourire*: ${person?.traits[1].percent}\n*Mignonnerie*: ${person?.traits[2].percent}\n*Amour*: ${person?.traits[3].percent}\n*Gentillesse*: ${person?.traits[4].percent}\n*Colère*: ${person?.traits[5].percent}\n\n*Total*: ${totalPercent}`: `whatsapp://send?text=*${person?.name}'s Traits.*\n*Confidence*: ${person?.traits[0].percent}\n*Smile*: ${person?.traits[1].percent}\n*Cuteness*: ${person?.traits[2].percent}\n*Love*: ${person?.traits[3].percent}\n*Kindness*: ${person?.traits[4].percent}\n*Anger*: ${person?.traits[5].percent}\n\n*Total:* ${totalPercent}`)
+    }
+    
     if (loading) {
         return (<main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
             <h1 className="text-3xl font-semibold animate-pulse">{t('loading_text')}</h1>
@@ -95,7 +100,7 @@ function TraitsPage() {
     return (
         <main className="h-screen w-screen flex flex-col justify-center bg-black items-center text-white">
             
-            <h1 className="text-3xl">{t('trait_parag')}<span className="text-3xl text-blue-500">{person ? person?.name : "XXXXX"}</span>.</h1>
+            {langQuery === 'fr' ? <h1 className="text-3xl">{t('trait_parag')}<span className="text-3xl text-blue-500">{person ? person?.name : "XXXXX"}</span>.</h1>: <h1 className="text-3xl"><span className="text-3xl text-blue-500">{person ? person?.name : "XXXXX"}'s</span>{t('trait_parag')}.</h1>}
             <div className="mt-6 border h-[30rem] flex flex-col items-center rounded-lg gap-2 border-neutral-800 mb-6 w-[28rem]">
             <ul className="w-full flex flex-col h-full overflow-auto p-7 gap-6 no-scrollbar scroll-smooth snap-y snap-center">
                 { person?.traits.map((trait) => {
@@ -112,10 +117,13 @@ function TraitsPage() {
             <div className="flex w-[28rem] items-center flex-col">
                 <button className='w-auto rounded-lg text-black hover:bg-neutral-300 bg-white transition-colors duration-200 p-2.5 mt-2 text-xl' onClick={() => navigate(`/?lang=${langQuery}`)}>{t('show_another_text')}</button>
                 <div className="flex items-center gap-6">
-                    <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6">
+                    <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6" onClick={()=> {
+                        navigator.clipboard.writeText(copyTxt)
+                        alert(t('copy_msg'))
+                    }}>
                         <img src={copy} alt="" width={20}/>
                     </button>
-                    <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6">
+                    <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6" onClick={() => window.location.href = statutTxt}>
                         <img src={whatsapp} alt="" width={20}/>
                     </button>
                     <button className="w-auto border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-3 mt-6">

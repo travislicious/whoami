@@ -46,14 +46,14 @@ function App() {
     </form>
     <h1 className='text-xl mb-4'>{t('author_text')}</h1>
     <div className='flex gap-5 items-center'>
-      <a href="https://www.google.com" target='_blank' className='hover:bg-neutral-900 transition-all duration-200 border p-1.5 border-neutral-900 rounded-lg'>
+      <a href="https://x.com/blob_travis" target='_blank' className='hover:bg-neutral-900 transition-all duration-200 border p-1.5 border-neutral-900 rounded-lg'>
       <img src={twitter} alt="twitter" />
       </a>
-      <a href="https://www.google.com" target='_blank' className='hover:bg-neutral-900 transition-all duration-200 border p-1.5 border-neutral-900 rounded-lg'>
-      <img src={github} alt="twitter" />
+      <a href="https://github.com/travislicious" target='_blank' className='hover:bg-neutral-900 transition-all duration-200 border p-1.5 border-neutral-900 rounded-lg'>
+      <img src={github} alt="github" />
       </a>
-      <a href="https://www.google.com" target='_blank' className='hover:bg-neutral-900 transition-all duration-200 border p-1.5 border-neutral-900 rounded-lg'>
-      <img src={reddit} alt="twitter" />
+      <a href="https://www.reddit.com/user/YoungTrav1s/" target='_blank' className='hover:bg-neutral-900 transition-all duration-200 border p-1.5 border-neutral-900 rounded-lg'>
+      <img src={reddit} alt="reddit" />
       </a>
     </div>
     <button type="submit" className='w-42 border rounded-lg text-white hover:bg-neutral-900 border-neutral-900 transition-colors duration-200 p-2 mt-6' onClick={() => navigate(langQuery === "en" ? "/?lang=fr" : "/?lang=en")}>{t('lang_change')}</button>

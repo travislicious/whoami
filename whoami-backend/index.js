@@ -49,7 +49,7 @@ const drawImage = (lang, traits, personName, totalPercent) => {
 
     textImage.setSelectionStyles({
         fill: colors.blue
-    }, textData.indexOf(personName), textData.indexOf(personName) + personName.length)
+    }, textData.indexOf(personName + "'s"), textData.indexOf(personName + "'s") + (personName + "'s").length)
     textImage.setSelectionStyles({
         underline: true
 
